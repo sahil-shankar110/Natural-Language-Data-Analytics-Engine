@@ -5,7 +5,7 @@ from app.llm import generate_sql
 from app.visualizer import generate_chart
 
 # Set page config
-st.set_page_config(page_icon="📊", page_title="AI Data Query Assistant", layout="wide")
+st.set_page_config(page_icon="📊", page_title="Natural Language Data Analytics Engine", layout="wide")
 
 # Session state to store data and results
 if "data" not in st.session_state:
@@ -13,9 +13,6 @@ if "data" not in st.session_state:
 
 if "history" not in st.session_state:
     st.session_state.history = []
-
-# if "message" not in st.session_state:
-#     st.session_state.message = " "
 
 # Sidebar For History
 with st.sidebar:
@@ -33,7 +30,7 @@ with st.sidebar:
         st.info("No queries yet. Ask something about your data!")    
 
 # Main Interface
-st.title("📊 AI Data Query Assistant")
+st.title("📊 Natural Language Data Analytics Engine")
 st.write("Upload your data and ask questions in plain English")
 
 
@@ -44,6 +41,7 @@ supported_type = [".csv", ".xlsx", ".xls", ".json", ".db", ".sqlite", ".sqlite3"
 col1 , col2 = st.columns([3, 2])
 with col1:
     uploaded_file = st.file_uploader("Choose a file", type= supported_type,max_upload_size=20, help="Supported formats: CSV, Excel, JSON, SQLite")
+    load_uploaded_button = st.button("Load Uploaded File")
 
 with col2:
     st.markdown("**Try Demo Files**")
@@ -52,7 +50,7 @@ with col2:
 
 
 # Load Uploaded File
-if uploaded_file and not st.session_state.data:
+if load_uploaded_button and uploaded_file:
     with st.spinner("Reading file..."):
         try:
             data = load_file(uploaded_file)
@@ -65,7 +63,7 @@ if uploaded_file and not st.session_state.data:
 
 # Load Demo File        
 if load_demo and demo != "None":
-    demo_files = { "Students Data": "Demo_Files/student_data.csv",
+    demo_files = { "Students Data": "Demo_Files/Student_Data.csv",
                   "Sales Data": "Demo_Files/Sales_Data.csv"}
     with st.spinner("Loading demo file..."):
         try:
@@ -82,7 +80,7 @@ if load_demo and demo != "None":
 if st.session_state.data:
 
     st.divider()
-    st.subheader("💬 Ask a Question")
+    st.subheader("💬 Ask anything about your Data")
 
     # ── Show available columns ──
     st.caption(f"📋 **Available columns:** {', '.join(st.session_state.columns)}")
@@ -126,9 +124,7 @@ if st.session_state.data:
                     st.warning(f"⚠️ {explanation}")
                 else:
                     df_result = read_query(st.session_state.db_path, sql_query)
-                    # ── Fix chart columns: match to actual df columns ──
-                    # LLM sometimes returns column names with wrong case
-                    # so we match them to actual result columns
+                    # Make column matching case-insensitive
                     actual_cols = [col.lower() for col in df_result.columns]
 
 
