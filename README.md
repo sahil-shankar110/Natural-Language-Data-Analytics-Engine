@@ -1,22 +1,28 @@
-📊 Natural Language Data Analytics Engine
+# 📊 Natural Language Data Analytics Engine
 
 > Explore and analyze datasets using simple natural language queries.
 
-📌 Overview
+---
 
-Natural Language Data Analytics Engine is An intelligent data analytics application that allows users to analyze datasets using natural language queries. Instead of writing SQL manually, users can simply ask questions in plain English, and the system automatically converts them into SQL queries, retrieves results, and generates visual insights.
+## 📌 Overview
 
-Users can upload datasets (CSV, Excel, JSON, or SQLite), ask questions in plain English, and the system automatically generates SQL queries, executes them on the dataset, and returns results with visualizations and explanations.
+**Natural Language Data Analytics Engine** is an intelligent, GenAI-powered data analytics application that allows anyone to explore and analyze datasets using plain English — no SQL, no coding, no technical background required.
 
-This project demonstrates how large language models can be integrated with data analytics systems to build intelligent data exploration tools.
+Users simply upload a dataset (CSV, Excel, JSON, or SQLite), ask a question in plain English, and the system automatically:
+- Converts the question into an accurate SQL query using LLaMA4 Scout via Groq
+- Executes the query securely on a read-only SQLite database
+- Returns results with interactive visualizations and plain English explanations
 
+This project demonstrates how large language models can be seamlessly integrated with data analytics pipelines to build powerful, accessible, and intelligent data exploration tools.
+
+---
 ## ✨ Key Features
 
 | Feature | Description |
 |---|---|
 | 🗣️ **Natural Language Queries** | Ask questions in plain English — no SQL knowledge needed |
 | 📁 **Multi-Format Support** | Upload CSV, Excel, JSON, SQLite, or .db files |
-| 🤖 **AI-Powered Engine** | LLaMA3-70B via Groq API for fast, accurate SQL generation |
+| 🤖 **AI-Powered Engine** | (meta-llama/llama-4-scout-17b-16e-instruct) via Groq API for fast, accurate SQL generation |
 | 📊 **Auto Visualization** | Intelligent chart selection — bar, line, pie, scatter |
 | 💬 **Plain English Explanations** | Every result explained in simple, human-readable language |
 | 🔒 **Secure & Read-Only** | Files are never modified — auto-deleted after session ends |
@@ -24,36 +30,22 @@ This project demonstrates how large language models can be integrated with data 
 | 💡 **Smart Suggestions** | Context-aware question suggestions based on your data |
 | 🎯 **Demo Datasets** | Practice with built-in datasets — no upload required |
 
+---
+
 ## 🛠️ Tech Stack
 
-Programming Language
+| Layer | Technology |
+|---|---|
+| **Programming Language** | Python 3.11+ |
+| **UI Framework** | Streamlit |
+| **LLM Provider** | Groq API — `meta-llama/llama-4-scout-17b-16e-instruct` |
+| **LLM Orchestration** | LangChain |
+| **Data Engine** | SQLite3 (read-only, session-isolated) |
+| **Data Processing** | Pandas, SQLite ,  tempfile, os (for file loading) |
+| **Visualization** | Plotly |
+| **Package Manager** | uv |
 
-Python
-
-Framework
-
-Streamlit
-
-AI / LLM
-
-Groq API (meta-llama/llama-4-scout-17b-16e-instruct)
-
-LLM Orchestration
-
-LangChain (for connecting LLM to SQL/database queries)
-
-Data Processing
-
-Pandas
-
-SQLite
-
-tempfile, os (for file loading)
-
-Data Visualization
-
-Plotly
-
+---
 ## ⚙️ How It Works
 
 ```
@@ -75,10 +67,12 @@ Plotly
 ⑥ Display Results      📊 Chart → 📋 Table → 💬 Explanation → 🔍 SQL
 ```
 
+---
+
 ## 📂 Project Structure
 
 ```
-nl-data-analytics-engine/
+natural-language-data-analytics-engine/
 │
 ├── streamlit_app.py        # Entry point — UI & orchestration
 ├── pyproject.toml          # uv dependency management
@@ -97,6 +91,8 @@ nl-data-analytics-engine/
 │   └── Sales_Data.csv      # Sales analytics dataset
 ```
 
+---
+
 ## 🔒 Security Model
 
 The application follows a strict **zero-modification** security model:
@@ -108,6 +104,7 @@ The application follows a strict **zero-modification** security model:
 - **No Persistent Storage** — Zero user data retained between sessions
 - **Secure Secrets** — API keys loaded from `.env`, never hardcoded
 
+---
 
 ### Run The Project
 
@@ -136,8 +133,6 @@ uv run streamlit run streamlit_app.py
 ---
 
 <div align="center">
-
-**Built with ❤️ using Streamlit, LangChain, and Groq**
 
 ⭐ Star this repo if you found it helpful!
 
