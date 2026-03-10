@@ -63,7 +63,7 @@ if load_uploaded_button and uploaded_file:
 
 # Load Demo File        
 if load_demo and demo != "None":
-    demo_files = { "Students Data": "Demo_Files/Student_Data.csv",
+    demo_files = { "Students Data": "Demo_Files/Students_Data.csv",
                   "Sales Data": "Demo_Files/Sales_Data.csv"}
     with st.spinner("Loading demo file..."):
         try:
