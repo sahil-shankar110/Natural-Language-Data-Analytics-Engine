@@ -5,11 +5,13 @@
 ---
 <img width="960" height="412" alt="NL 1" src="https://github.com/user-attachments/assets/b8ad9b9e-4462-46b6-b34f-f93986a27e12" />
 
+---
 <img width="960" height="416" alt="NL 2" src="https://github.com/user-attachments/assets/d8b3bf2b-181f-4bb7-98fa-ae2f362f9f81" />
 
+---
 <img width="960" height="445" alt="NL 3" src="https://github.com/user-attachments/assets/46f0501a-776f-4e12-bca0-0591e53c0376" />
 
-
+---
 ## 📌 Overview
 
 **Natural Language Data Analytics Engine** is an intelligent, GenAI-powered data analytics application that allows anyone to explore and analyze datasets using plain English — no SQL, no coding, no technical background required.
