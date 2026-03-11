@@ -9,7 +9,8 @@
 <img width="960" height="416" alt="NL 2" src="https://github.com/user-attachments/assets/d8b3bf2b-181f-4bb7-98fa-ae2f362f9f81" />
 
 ---
-<img width="960" height="445" alt="NL 3" src="https://github.com/user-attachments/assets/46f0501a-776f-4e12-bca0-0591e53c0376" />
+<img width="960" height="418" alt="NL 3" src="https://github.com/user-attachments/assets/de2c650a-17c0-4e4a-9a6d-0e90450ba1ea" />
+
 
 ---
 ## 📌 Overview
@@ -130,7 +131,11 @@ uv run streamlit run streamlit_app.py
 ```
 
 ---
+## Try Out
 
+https://natural-language-data-analytics-engine-by-sahil-shankar.streamlit.app/
+
+---
 ## 👤 Author
 
 **Sahil Shankar**
