@@ -1,5 +1,4 @@
 from langchain_groq import ChatGroq
-from langchain_google_genai import ChatGoogleGenerativeAI
 from app.prompts import sql_prompt
 from langchain_core.output_parsers import JsonOutputParser
 from dotenv import load_dotenv
