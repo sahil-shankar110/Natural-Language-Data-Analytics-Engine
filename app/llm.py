@@ -8,12 +8,15 @@ load_dotenv()
 
 
 groq_api_key = os.getenv("GROQ_API_KEY")
+
+
 llm = ChatGroq(
     api_key= groq_api_key,
-    model="meta-llama/llama-prompt-guard-2-86m",
+    model="openai/gpt-oss-120b",
     temperature=0.4,
     max_tokens=None,
     max_retries=2)
+
     
 chain =  sql_prompt| llm | JsonOutputParser() 
 
