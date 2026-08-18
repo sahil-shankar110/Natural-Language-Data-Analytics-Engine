@@ -10,7 +10,7 @@ load_dotenv()
 groq_api_key = os.getenv("GROQ_API_KEY")
 llm = ChatGroq(
     api_key= groq_api_key,
-    model="meta-llama/llama-4-scout-17b-16e-instruct",
+    model="meta-llama/llama-prompt-guard-2-86m",
     temperature=0.4,
     max_tokens=None,
     max_retries=2)
